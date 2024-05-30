@@ -61,30 +61,31 @@ public class Jogo {
         ArrayList<Dado> dados = jogador.getDadosFinais();
         System.out.println("Digite aonde voce deseja salvar: ");
         int salvo = sc.nextInt();
+        Tabela tabelaJogadorAtual = jogador.getTabela();
         switch (salvo){
             case(1):
-                jogador.getTabela().setOnes(dados);
+                tabelaJogadorAtual.setOnes(dados);
                 break;
             case(2):
-                jogador.getTabela().setTwos(dados);
+                tabelaJogadorAtual.setTwos(dados);
                 break;
             case(3):
-                jogador.getTabela().setThrees(dados);
+                tabelaJogadorAtual.setThrees(dados);
                 break;
             case(4):
-                jogador.getTabela().setFours(dados);
+                tabelaJogadorAtual.setFours(dados);
                 break;
             case(5):
-                jogador.getTabela().setFives(dados);
+                tabelaJogadorAtual.setFives(dados);
                 break;
             case(6):
-                jogador.getTabela().setSixes(dados);
+                tabelaJogadorAtual.setSixes(dados);
                 break;
             case(7):
-
+                tabelaJogadorAtual.setThreeOfAKind(dados);
                 break;
             case(8):
-
+                tabelaJogadorAtual.setFourOfAKind(dados);
                 break;
             case(9):
 
@@ -95,9 +96,8 @@ public class Jogo {
             case(11):
 
                 break;
-
         }
-
+        jogador.getTabela().mostrarTabela();
     }
 
 

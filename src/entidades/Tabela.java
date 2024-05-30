@@ -143,12 +143,7 @@ public class Tabela {
     }
 
     public void setThreeOfAKind(ArrayList<Dado> dados) {
-        dados.sort(new Comparator<Dado>() {
-            @Override
-            public int compare(Dado d1, Dado d2) {
-                return Integer.compare(d1.getFace(), d2.getFace());
-            }
-        });
+        dados = ordenaDados(dados);
 
         boolean sequencia = false;
         int i = 0;
@@ -163,6 +158,33 @@ public class Tabela {
                 }
             }
             i++;
+        }
+    }
+
+    public int getFourOfAKind() {
+        return threeOfAKind;
+    }
+
+    public void setFourOfAKind(ArrayList<Dado> dados) {
+
+    }
+
+    public int getFullHouse() {
+        return fullHouse;
+    }
+
+    public void setFullHouse(ArrayList<Dado> dados) {
+        dados = ordenaDados(dados);
+        boolean doisPrimeiros = dados.get(0).getFace() == dados.get(1).getFace();
+        boolean primeiroETerceiro = dados.get(0).getFace() == dados.get(2).getFace();
+        boolean ultimos = dados.get(3).getFace() == dados.get(4).getFace();
+
+        boolean terceiroEUltimo = dados.get(2).getFace() == dados.get(3).getFace();
+        boolean quartoEUlimo = dados.get(3).getFace() == dados.get(4).getFace();
+        if (doisPrimeiros && primeiroETerceiro && ultimos) {
+            this.fullHouse = 35;
+        } else if (doisPrimeiros && terceiroEUltimo && quartoEUlimo) {
+            this.fullHouse = 35;
         }
         for (Dado d : dados) {
             if (d != null) {
@@ -185,5 +207,15 @@ public class Tabela {
         System.out.println("Large straight: " + this.largeStraight);
         System.out.println("Chance: " + this.chance);
         System.out.println("Yahtzee: " + this.yahtzee);
+    }
+
+    private static ArrayList<Dado> ordenaDados(ArrayList<Dado> dados) {
+        dados.sort(new Comparator<Dado>() {
+            @Override
+            public int compare(Dado d1, Dado d2) {
+                return Integer.compare(d1.getFace(), d2.getFace());
+            }
+        });
+        return dados;
     }
 }

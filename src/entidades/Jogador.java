@@ -40,10 +40,6 @@ public class Jogador {
         return pontos;
     }
 
-    public void setPontos(Integer pontos) {
-        this.pontos = pontos;
-    }
-
     public ArrayList<Dado> getDadosAtuais() {
         return dadosAtuais;
     }
