@@ -58,6 +58,45 @@ public class Jogo {
 
     private void calculaPontos(Scanner sc, Jogador jogador) {
         jogador.getTabela().mostrarTabela();
+        ArrayList<Dado> dados = jogador.getDadosFinais();
+        System.out.println("Digite aonde voce deseja salvar: ");
+        int salvo = sc.nextInt();
+        switch (salvo){
+            case(1):
+                jogador.getTabela().setOnes(dados);
+                break;
+            case(2):
+                jogador.getTabela().setTwos(dados);
+                break;
+            case(3):
+                jogador.getTabela().setThrees(dados);
+                break;
+            case(4):
+                jogador.getTabela().setFours(dados);
+                break;
+            case(5):
+                jogador.getTabela().setFives(dados);
+                break;
+            case(6):
+                jogador.getTabela().setSixes(dados);
+                break;
+            case(7):
+
+                break;
+            case(8):
+
+                break;
+            case(9):
+
+                break;
+            case(10):
+
+                break;
+            case(11):
+
+                break;
+
+        }
 
     }
 

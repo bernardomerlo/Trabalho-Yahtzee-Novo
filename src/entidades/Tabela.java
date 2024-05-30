@@ -1,6 +1,9 @@
 package entidades;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Tabela {
     private int ones;
@@ -11,7 +14,6 @@ public class Tabela {
     private int sixes;
     private int bonus;
     private int total1;
-
     private int threeOfAKind;
     private int fourOfAKind;
     private int fullHouse;
@@ -27,9 +29,9 @@ public class Tabela {
 
     public void setOnes(ArrayList<Dado> dados) {
         int total = 0;
-        for(Dado d : dados){
-            if(d != null){
-                if(d.getFace() == 1){
+        for (Dado d : dados) {
+            if (d != null) {
+                if (d.getFace() == 1) {
                     total += 1;
                 }
             }
@@ -43,9 +45,9 @@ public class Tabela {
 
     public void setTwos(ArrayList<Dado> dados) {
         int total = 0;
-        for(Dado d : dados){
-            if(d != null){
-                if(d.getFace() == 2){
+        for (Dado d : dados) {
+            if (d != null) {
+                if (d.getFace() == 2) {
                     total += 2;
                 }
             }
@@ -59,9 +61,9 @@ public class Tabela {
 
     public void setThrees(ArrayList<Dado> dados) {
         int total = 0;
-        for(Dado d : dados){
-            if(d != null){
-                if(d.getFace() == 3){
+        for (Dado d : dados) {
+            if (d != null) {
+                if (d.getFace() == 3) {
                     total += 3;
                 }
             }
@@ -75,9 +77,9 @@ public class Tabela {
 
     public void setFours(ArrayList<Dado> dados) {
         int total = 0;
-        for(Dado d : dados){
-            if(d != null){
-                if(d.getFace() == 4){
+        for (Dado d : dados) {
+            if (d != null) {
+                if (d.getFace() == 4) {
                     total += 4;
                 }
             }
@@ -91,9 +93,9 @@ public class Tabela {
 
     public void setFives(ArrayList<Dado> dados) {
         int total = 0;
-        for(Dado d : dados){
-            if(d != null){
-                if(d.getFace() == 5){
+        for (Dado d : dados) {
+            if (d != null) {
+                if (d.getFace() == 5) {
                     total += 5;
                 }
             }
@@ -107,9 +109,9 @@ public class Tabela {
 
     public void setSixes(ArrayList<Dado> dados) {
         int total = 0;
-        for(Dado d : dados){
-            if(d != null){
-                if(d.getFace() == 6){
+        for (Dado d : dados) {
+            if (d != null) {
+                if (d.getFace() == 6) {
                     total += 6;
                 }
             }
@@ -123,7 +125,7 @@ public class Tabela {
 
     public void setBonus() {
         int total = this.ones + this.twos + this.threes + this.fours + this.fives + this.sixes;
-        if(total >= 63){
+        if (total >= 63) {
             this.bonus = 35;
         }
     }
@@ -134,6 +136,39 @@ public class Tabela {
 
     public void setTotal1() {
         this.total1 = this.ones + this.twos + this.threes + this.fours + this.fives + this.sixes + this.bonus;
+    }
+
+    public int getThreeOfAKind() {
+        return threeOfAKind;
+    }
+
+    public void setThreeOfAKind(ArrayList<Dado> dados) {
+        dados.sort(new Comparator<Dado>() {
+            @Override
+            public int compare(Dado d1, Dado d2) {
+                return Integer.compare(d1.getFace(), d2.getFace());
+            }
+        });
+
+        boolean sequencia = false;
+        int i = 0;
+        while (!sequencia) {
+            if (i > dados.size()) {
+                break;
+            }
+            if (i + 1 < 5 && i + 2 < 5) {
+                if (dados.get(i).getFace() == dados.get(i + 1).getFace() && dados.get(i).getFace() == dados.get(i + 2).getFace()) {
+                    this.threeOfAKind = dados.get(i).getFace() * 3;
+                    sequencia = true;
+                }
+            }
+            i++;
+        }
+        for (Dado d : dados) {
+            if (d != null) {
+                System.out.println(d.getFace());
+            }
+        }
     }
 
     public void mostrarTabela() {

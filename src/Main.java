@@ -17,5 +17,7 @@ public class Main {
 
         Jogo jogo = new Jogo(lista);
         jogo.jogar(sc);
+
+
     }
 }

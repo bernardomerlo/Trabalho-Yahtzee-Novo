@@ -7,6 +7,9 @@ public class Dado {
 
     public Dado() {
     }
+    public Dado(int face) {
+        this.face = face;
+    }
 
     public int getFace() {
         return face;
