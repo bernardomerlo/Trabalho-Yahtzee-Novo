@@ -23,7 +23,7 @@ public class Jogador {
     }
 
     private void iniciaVazios() {
-        for(int i= 0; i<5;i++){
+        for (int i = 0; i < 5; i++) {
             this.dadosGuardados.add(null);
         }
     }
@@ -80,31 +80,31 @@ public class Jogador {
         this.dadosFinais = dadosFinais;
     }
 
-    private void iniciarLista(){
-        for(int i= 0; i<5;i++){
+    private void iniciarLista() {
+        for (int i = 0; i < 5; i++) {
             Dado d = new Dado();
             this.dadosAtuais.add(d);
         }
     }
 
-    public void rolarDados(){
-        for(Dado d : this.dadosAtuais){
-            if(d != null){
+    public void rolarDados() {
+        for (Dado d : this.dadosAtuais) {
+            if (d != null) {
                 d.rolar();
-                System.out.printf("Face %d: %d\n", this.dadosAtuais.indexOf(d),d.getFace());
+                System.out.printf("Face %d: %d\n", this.dadosAtuais.indexOf(d), d.getFace());
             }
         }
     }
 
-    public void calculaDadosFinal(){
+    public void calculaDadosFinal() {
         this.dadosFinais = new ArrayList<Dado>();
-        for(Dado d : this.dadosGuardados){
-            if(d != null){
+        for (Dado d : this.dadosGuardados) {
+            if (d != null) {
                 this.dadosFinais.add(d);
             }
         }
-        for(Dado d : this.dadosAtuais){
-            if(d != null){
+        for (Dado d : this.dadosAtuais) {
+            if (d != null) {
                 this.dadosFinais.add(d);
             }
         }

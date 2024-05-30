@@ -172,8 +172,7 @@ public class Tabela {
         int quarto = dados.get(3).getFace();
         int quinto = dados.get(4).getFace();
 
-        if (primeiro == segundo && segundo == terceiro && terceiro == quarto ||
-                segundo == terceiro && terceiro == quarto && quarto == quinto) {
+        if (primeiro == segundo && segundo == terceiro && terceiro == quarto || segundo == terceiro && terceiro == quarto && quarto == quinto) {
             this.fourOfAKind = terceiro * 4;
         }
 
@@ -253,20 +252,50 @@ public class Tabela {
         }
     }
 
+    public Integer getChance() {
+        return chance;
+    }
+
+    public void setChance(ArrayList<Dado> dados) {
+        this.chance = dados.get(0).getFace() + dados.get(1).getFace() + dados.get(2).getFace() + dados.get(3).getFace() + dados.get(4).getFace();
+    }
+
+    public Integer getYahtzee() {
+        return yahtzee;
+    }
+
+    public void setYahtzee(ArrayList<Dado> dados) {
+        if (dados.get(0).getFace() == dados.get(1).getFace() && dados.get(1).getFace() == dados.get(2).getFace() && dados.get(2).getFace() == dados.get(3).getFace() && dados.get(2).getFace() == dados.get(4).getFace()) {
+            if (this.yahtzee == 50) {
+                this.yahtzee += 100;
+            } else {
+                this.yahtzee = 50;
+            }
+        }
+    }
+
+    public Integer getTotalFinal() {
+        return totalFinal;
+    }
+
+    public void setTotalFinal(Integer totalFinal) {
+        this.totalFinal = this.total1 + this.threeOfAKind + this.fourOfAKind + this.fullHouse + this.smallStraight + this.largeStraight + this.chance + this.yahtzee;
+    }
+
     public void mostrarTabela() {
-        System.out.println("1.Ones: " + this.ones);
-        System.out.println("2.Twos: " + this.twos);
-        System.out.println("3.Threes: " + this.threes);
-        System.out.println("4.Fours: " + this.fours);
-        System.out.println("5.Fives: " + this.fives);
-        System.out.println("6.Sixes: " + this.sixes);
-        System.out.println("7.Three of a Kind: " + this.threeOfAKind);
-        System.out.println("8.Four of a Kind: " + this.fourOfAKind);
-        System.out.println("9.Full House: " + this.fullHouse);
-        System.out.println("10.Small straight: " + this.smallStraight);
-        System.out.println("11.Large straight: " + this.largeStraight);
-        System.out.println("12.Chance: " + this.chance);
-        System.out.println("13.Yahtzee: " + this.yahtzee);
+        System.out.println("1.Ones: " + (this.ones != null ? this.ones : 0));
+        System.out.println("2.Twos: " + (this.twos != null ? this.twos : 0));
+        System.out.println("3.Threes: " + (this.threes != null ? this.threes : 0));
+        System.out.println("4.Fours: " + (this.fours != null ? this.fours : 0));
+        System.out.println("5.Fives: " + (this.fives != null ? this.fives : 0));
+        System.out.println("6.Sixes: " + (this.sixes != null ? this.sixes : 0));
+        System.out.println("7.Three of a Kind: " + (this.threeOfAKind != null ? this.threeOfAKind : 0));
+        System.out.println("8.Four of a Kind: " + (this.fourOfAKind != null ? this.fourOfAKind : 0));
+        System.out.println("9.Full House: " + (this.fullHouse != null ? this.fullHouse : 0));
+        System.out.println("10.Small straight: " + (this.smallStraight != null ? this.smallStraight : 0));
+        System.out.println("11.Large straight: " + (this.largeStraight != null ? this.largeStraight : 0));
+        System.out.println("12.Chance: " + (this.chance != null ? this.chance : 0));
+        System.out.println("13.Yahtzee: " + (this.yahtzee != null ? this.yahtzee : 0));
     }
 
     private static ArrayList<Dado> ordenaDados(ArrayList<Dado> dados) {

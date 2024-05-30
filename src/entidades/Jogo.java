@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Jogo {
     private ArrayList<Jogador> jogadores;
 
-    public Jogo(ArrayList<Jogador> jogadores){
+    public Jogo(ArrayList<Jogador> jogadores) {
         this.jogadores = jogadores;
     }
 
@@ -18,13 +18,12 @@ public class Jogo {
         this.jogadores = jogadores;
     }
 
-    public void jogar(Scanner sc){
-        for(int jogadores = 0; jogadores<this.jogadores.size(); jogadores++){
-            Jogador jogadorAtual = this.jogadores.get(jogadores);
+    public void jogar(Scanner sc) {
+        for (Jogador jogadorAtual : this.jogadores) {
             System.out.println("Vez do(a) jogador(a) " + jogadorAtual.getNome());
-            for(int rodada = 0; rodada<3; rodada++){
+            for (int rodada = 0; rodada < 3; rodada++) {
                 jogadorAtual.rolarDados();
-                if(rodada <= 1) {
+                if (rodada <= 1) {
                     System.out.println("Deseja salvar algum dado? (s/n)");
                     String resposta = sc.nextLine();
                     if (resposta.charAt(0) == 's') {
@@ -32,7 +31,7 @@ public class Jogo {
                         int quantidadeASerSalvo = sc.nextInt();
                         sc.nextLine();
                         jogadorAtual.setQuantDadosSalvos(quantidadeASerSalvo);
-                        if(jogadorAtual.getQuantDadosSalvos() == 5){
+                        if (jogadorAtual.getQuantDadosSalvos() == 5) {
                             break;
                         }
                         for (int salvo = 0; salvo < quantidadeASerSalvo; salvo++) {
@@ -49,7 +48,7 @@ public class Jogo {
             jogadorAtual.calculaDadosFinal();
 
             System.out.println("Seus dados: ");
-            for(Dado d : jogadorAtual.getDadosFinais()){
+            for (Dado d : jogadorAtual.getDadosFinais()) {
                 System.out.println(d);
             }
             calculaPontos(sc, jogadorAtual);
@@ -62,52 +61,51 @@ public class Jogo {
         System.out.println("Digite aonde voce deseja salvar: ");
         int salvo = sc.nextInt();
         Tabela tabelaJogadorAtual = jogador.getTabela();
-        switch (salvo){
-            case(1):
+        switch (salvo) {
+            case (1):
                 tabelaJogadorAtual.setOnes(dados);
                 break;
-            case(2):
+            case (2):
                 tabelaJogadorAtual.setTwos(dados);
                 break;
-            case(3):
+            case (3):
                 tabelaJogadorAtual.setThrees(dados);
                 break;
-            case(4):
+            case (4):
                 tabelaJogadorAtual.setFours(dados);
                 break;
-            case(5):
+            case (5):
                 tabelaJogadorAtual.setFives(dados);
                 break;
-            case(6):
+            case (6):
                 tabelaJogadorAtual.setSixes(dados);
                 break;
-            case(7):
+            case (7):
                 tabelaJogadorAtual.setThreeOfAKind(dados);
                 break;
-            case(8):
+            case (8):
                 tabelaJogadorAtual.setFourOfAKind(dados);
                 break;
-            case(9):
+            case (9):
                 tabelaJogadorAtual.setFullHouse(dados);
                 break;
-            case(10):
+            case (10):
                 tabelaJogadorAtual.setSmallStraight(dados);
                 break;
-            case(11):
+            case (11):
                 tabelaJogadorAtual.setLargeStraight(dados);
                 break;
-            case(12):
-
+            case (12):
+                tabelaJogadorAtual.setChance(dados);
                 break;
-            case(13):
-
+            case (13):
+                tabelaJogadorAtual.setYahtzee(dados);
                 break;
             default:
                 System.out.println("Teste");
         }
         jogador.getTabela().mostrarTabela();
     }
-
 
 
 }
