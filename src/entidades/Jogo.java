@@ -88,14 +88,22 @@ public class Jogo {
                 tabelaJogadorAtual.setFourOfAKind(dados);
                 break;
             case(9):
-
+                tabelaJogadorAtual.setFullHouse(dados);
                 break;
             case(10):
-
+                tabelaJogadorAtual.setSmallStraight(dados);
                 break;
             case(11):
 
                 break;
+            case(12):
+
+                break;
+            case(13):
+
+                break;
+            default:
+                System.out.println("Teste");
         }
         jogador.getTabela().mostrarTabela();
     }

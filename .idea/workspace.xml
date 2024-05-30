@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="809275ab-04e2-4533-a6d1-193d386c43dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jogador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Tabela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Tabela.java" afterDir="false" />
     </list>
@@ -41,6 +40,7 @@
     "Application.Testes.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Bernardo/Documents/estudos/Java/yahtzee",
@@ -50,8 +50,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
@@ -118,7 +118,7 @@
       <workItem from="1716835367801" duration="728000" />
       <workItem from="1717014425446" duration="5893000" />
       <workItem from="1717028959683" duration="131000" />
-      <workItem from="1717072774318" duration="5138000" />
+      <workItem from="1717072774318" duration="8363000" />
     </task>
     <task id="LOCAL-00001" summary="metodos get e set do threeOfAKind funcionando">
       <option name="closed" value="true" />
@@ -137,5 +137,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="metodos get e set do threeOfAKind funcionando" />
     <option name="LAST_COMMIT_MESSAGE" value="metodos get e set do threeOfAKind funcionando" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Teste.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

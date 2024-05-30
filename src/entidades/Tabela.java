@@ -1,27 +1,25 @@
 package entidades;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Tabela {
-    private int ones;
-    private int twos;
-    private int threes;
-    private int fours;
-    private int fives;
-    private int sixes;
-    private int bonus;
-    private int total1;
-    private int threeOfAKind;
-    private int fourOfAKind;
-    private int fullHouse;
-    private int smallStraight;
-    private int largeStraight;
-    private int chance;
-    private int yahtzee;
-    private int totalFinal;
+    private Integer ones;
+    private Integer twos;
+    private Integer threes;
+    private Integer fours;
+    private Integer fives;
+    private Integer sixes;
+    private Integer bonus;
+    private Integer total1;
+    private Integer threeOfAKind;
+    private Integer fourOfAKind;
+    private Integer fullHouse;
+    private Integer smallStraight;
+    private Integer largeStraight;
+    private Integer chance;
+    private Integer yahtzee;
+    private Integer totalFinal;
 
     public int getOnes() {
         return ones;
@@ -162,11 +160,28 @@ public class Tabela {
     }
 
     public int getFourOfAKind() {
-        return threeOfAKind;
+        return fourOfAKind;
     }
 
     public void setFourOfAKind(ArrayList<Dado> dados) {
+        dados = ordenaDados(dados);
 
+        int primeiro = dados.get(0).getFace();
+        int segundo = dados.get(1).getFace();
+        int terceiro = dados.get(2).getFace();
+        int quarto = dados.get(3).getFace();
+        int quinto = dados.get(4).getFace();
+
+        if (primeiro == segundo && segundo == terceiro && terceiro == quarto ||
+                segundo == terceiro && terceiro == quarto && quarto == quinto) {
+            this.fourOfAKind = terceiro * 4;
+        }
+
+        for (Dado d : dados) {
+            if (d != null) {
+                System.out.println(d.getFace());
+            }
+        }
     }
 
     public int getFullHouse() {
@@ -186,6 +201,26 @@ public class Tabela {
         } else if (doisPrimeiros && terceiroEUltimo && quartoEUlimo) {
             this.fullHouse = 35;
         }
+    }
+
+    public Integer getSmallStraight() {
+        return smallStraight;
+    }
+
+    public void setSmallStraight(ArrayList<Dado> dados) {
+        dados = ordenaDados(dados);
+
+        int dado0 = dados.get(0).getFace();
+        int dado1 = dados.get(1).getFace();
+        int dado2 = dados.get(2).getFace();
+        int dado3 = dados.get(3).getFace();
+        int dado4 = dados.get(4).getFace();
+        boolean valores = dado1 + 1 == dado2 && dado2 + 1 == dado3;
+
+        if (dado0 + 1 == dado1 && valores || valores && dado3 + 1 == dado4) {
+            this.smallStraight = 30;
+        }
+
         for (Dado d : dados) {
             if (d != null) {
                 System.out.println(d.getFace());
@@ -194,19 +229,19 @@ public class Tabela {
     }
 
     public void mostrarTabela() {
-        System.out.println("Ones: " + this.ones);
-        System.out.println("Twos: " + this.twos);
-        System.out.println("Threes: " + this.threes);
-        System.out.println("Fours: " + this.fours);
-        System.out.println("Fives: " + this.fives);
-        System.out.println("Sixes: " + this.sixes);
-        System.out.println("Three of a Kind: " + this.threeOfAKind);
-        System.out.println("Four of a Kind: " + this.fourOfAKind);
-        System.out.println("Full House: " + this.fullHouse);
-        System.out.println("Small straight: " + this.smallStraight);
-        System.out.println("Large straight: " + this.largeStraight);
-        System.out.println("Chance: " + this.chance);
-        System.out.println("Yahtzee: " + this.yahtzee);
+        System.out.println("1.Ones: " + this.ones);
+        System.out.println("2.Twos: " + this.twos);
+        System.out.println("3.Threes: " + this.threes);
+        System.out.println("4.Fours: " + this.fours);
+        System.out.println("5.Fives: " + this.fives);
+        System.out.println("6.Sixes: " + this.sixes);
+        System.out.println("7.Three of a Kind: " + this.threeOfAKind);
+        System.out.println("8.Four of a Kind: " + this.fourOfAKind);
+        System.out.println("9.Full House: " + this.fullHouse);
+        System.out.println("10.Small straight: " + this.smallStraight);
+        System.out.println("11.Large straight: " + this.largeStraight);
+        System.out.println("12.Chance: " + this.chance);
+        System.out.println("13.Yahtzee: " + this.yahtzee);
     }
 
     private static ArrayList<Dado> ordenaDados(ArrayList<Dado> dados) {
