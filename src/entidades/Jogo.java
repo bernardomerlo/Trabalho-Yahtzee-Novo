@@ -94,7 +94,7 @@ public class Jogo {
                 tabelaJogadorAtual.setSmallStraight(dados);
                 break;
             case(11):
-
+                tabelaJogadorAtual.setLargeStraight(dados);
                 break;
             case(12):
 

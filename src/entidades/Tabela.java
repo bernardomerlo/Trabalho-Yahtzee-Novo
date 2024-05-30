@@ -228,6 +228,31 @@ public class Tabela {
         }
     }
 
+    public Integer getLargeStraight() {
+        return largeStraight;
+    }
+
+    public void setLargeStraight(ArrayList<Dado> dados) {
+        dados = ordenaDados(dados);
+
+        int dado0 = dados.get(0).getFace();
+        int dado1 = dados.get(1).getFace();
+        int dado2 = dados.get(2).getFace();
+        int dado3 = dados.get(3).getFace();
+        int dado4 = dados.get(4).getFace();
+        boolean verificacao = dado0 + 1 == dado1 && dado1 + 1 == dado2 && dado2 + 1 == dado3 && dado3 + 1 == dado4;
+
+        if (verificacao) {
+            this.largeStraight = 40;
+        }
+
+        for (Dado d : dados) {
+            if (d != null) {
+                System.out.println(d.getFace());
+            }
+        }
+    }
+
     public void mostrarTabela() {
         System.out.println("1.Ones: " + this.ones);
         System.out.println("2.Twos: " + this.twos);

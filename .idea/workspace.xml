@@ -56,7 +56,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Teste (1)">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="yahtzee" />
@@ -64,40 +64,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Teste (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Teste" />
-      <module name="yahtzee" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="entidades.Teste" />
-      <module name="yahtzee" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="entidades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Testes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Testes" />
-      <module name="yahtzee" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Teste (1)" />
-        <item itemvalue="Application.Teste" />
-        <item itemvalue="Application.Testes" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -118,7 +84,7 @@
       <workItem from="1716835367801" duration="728000" />
       <workItem from="1717014425446" duration="5893000" />
       <workItem from="1717028959683" duration="131000" />
-      <workItem from="1717072774318" duration="8363000" />
+      <workItem from="1717072774318" duration="9093000" />
     </task>
     <task id="LOCAL-00001" summary="metodos get e set do threeOfAKind funcionando">
       <option name="closed" value="true" />
@@ -145,6 +111,11 @@
           <url>file://$PROJECT_DIR$/src/Teste.java</url>
           <line>7</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/entidades/Tabela.java</url>
+          <line>256</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
