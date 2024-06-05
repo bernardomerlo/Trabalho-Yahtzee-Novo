@@ -283,6 +283,7 @@ public class Tabela {
     }
 
     public void mostrarTabela() {
+        System.out.println("Tabela de Pontos Atual");
         System.out.println("1.Ones: " + (this.ones != null ? this.ones : 0));
         System.out.println("2.Twos: " + (this.twos != null ? this.twos : 0));
         System.out.println("3.Threes: " + (this.threes != null ? this.threes : 0));
@@ -297,6 +298,24 @@ public class Tabela {
         System.out.println("12.Chance: " + (this.chance != null ? this.chance : 0));
         System.out.println("13.Yahtzee: " + (this.yahtzee != null ? this.yahtzee : 0));
     }
+
+    public void mostraTabelaDeEscolha() {
+        System.out.println("Tabela de Escolha, digite somente um dos valores que aparecem abaixo:");
+        System.out.println((this.ones != null ? "Ones já selecionado" : "1.Ones: " + 0));
+        System.out.println((this.twos != null ? "Twos já selecionado" : "2.Twos: " + 0));
+        System.out.println((this.threes != null ? "Threes já selecionado" : "3.Threes: " + 0));
+        System.out.println((this.fours != null ? "Fours já selecionado" : "4.Fours: " + 0));
+        System.out.println((this.fives != null ? "Fives já selecionado" : "5.Fives: " + 0));
+        System.out.println((this.sixes != null ? "Sixes já selecionado" : "6.Sixes: " + 0));
+        System.out.println((this.threeOfAKind != null ? "Three of a Kind já selecionado" : "7.Three of a Kind: " + 0));
+        System.out.println((this.fourOfAKind != null ? "Four of a Kind já selecionado" : "8.Four of a Kind: " + 0));
+        System.out.println((this.fullHouse != null ? "Full House já selecionado" : "9.Full House: " + 0));
+        System.out.println((this.smallStraight != null ? "Small Straight já selecionado" : "10.Small Straight: " + 0));
+        System.out.println((this.largeStraight != null ? "Large Straight já selecionado" : "11.Large Straight: " + 0));
+        System.out.println((this.chance != null ? "Chance já selecionado" : "12.Chance: " + 0));
+        System.out.println((this.yahtzee != null ? "Yahtzee já selecionado" : "13.Yahtzee: " + 0));
+    }
+
 
     private static ArrayList<Dado> ordenaDados(ArrayList<Dado> dados) {
         dados.sort(new Comparator<Dado>() {

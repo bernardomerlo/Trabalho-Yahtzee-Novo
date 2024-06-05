@@ -19,7 +19,8 @@ public class Jogo {
     }
 
     public void jogar(Scanner sc) {
-        for (Jogador jogadorAtual : this.jogadores) {
+        for (int rodadas = 0; rodadas < jogadores.size() * 13; rodadas++) {
+            Jogador jogadorAtual = jogadores.get(rodadas);
             System.out.println("Vez do(a) jogador(a) " + jogadorAtual.getNome());
             for (int rodada = 0; rodada < 3; rodada++) {
                 jogadorAtual.rolarDados();
@@ -49,14 +50,18 @@ public class Jogo {
 
             System.out.println("Seus dados: ");
             for (Dado d : jogadorAtual.getDadosFinais()) {
-                System.out.println(d);
+                if (d != null) {
+                    System.out.printf("Face %d: %d\n", jogadorAtual.getDadosFinais().indexOf(d), d.getFace());
+                }
             }
+            System.out.println("\n");
             calculaPontos(sc, jogadorAtual);
+            sc.nextLine();
         }
     }
 
     private void calculaPontos(Scanner sc, Jogador jogador) {
-        jogador.getTabela().mostrarTabela();
+        jogador.getTabela().mostraTabelaDeEscolha();
         ArrayList<Dado> dados = jogador.getDadosFinais();
         System.out.println("Digite aonde voce deseja salvar: ");
         int salvo = sc.nextInt();
@@ -104,7 +109,9 @@ public class Jogo {
             default:
                 System.out.println("Teste");
         }
+        System.out.println("\n");
         jogador.getTabela().mostrarTabela();
+        System.out.println("\n");
     }
 
 
